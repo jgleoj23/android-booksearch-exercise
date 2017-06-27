@@ -27,4 +27,8 @@ public class BookClient {
             e.printStackTrace();
         }
     }
+
+    public void getBookDetails(final String olid, JsonHttpResponseHandler handler) {
+        client.get(getApiUrl("/api/books?bibkeys=OLID:" + olid + "&format=json&jscmd=data"), handler);
+    }
 }
